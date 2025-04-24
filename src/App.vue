@@ -1,13 +1,11 @@
 <script setup>
+import Header from './components/Header.vue'
+
 </script>
 
 <template>
   <div>
-    <nav class="flex gap-4">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-    </nav>
-
+    <Header />
     <router-view></router-view>
   </div>
   <HelloWorld msg="Vite + Vue" />
