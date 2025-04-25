@@ -1,7 +1,7 @@
 <template>
-    <div class="flex gap-4 w-11/12 md:w-10/12 mx-auto mt-32">
+    <div class="flex w-full mt-32 relative">
         <SideBar />
-        <div class="flex items-center justify-center w-full">
+        <div class="flex w-[calc(80%-32px)] justify-end absolute right-0">
             <div class="bg-white p-6 rounded-xl w-full shadow-lg">
                 <div class="mb-4">
                     <h2 class="text-xl font-bold">Nouveau template</h2>
