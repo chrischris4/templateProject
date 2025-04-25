@@ -1,5 +1,5 @@
 <template>
-    <div class="flex gap-4 w-11/12 md:w-10/12 mx-auto mt-4">
+    <div class="flex gap-4 w-11/12 md:w-10/12 mx-auto mt-32">
         <SideBar />
         <div class="flex items-center justify-center w-full">
             <div class="bg-white p-6 rounded-xl w-full shadow-lg">
@@ -24,6 +24,7 @@
             </div>
         </div>
     </div>
+    <Footer />
 </template>
 
 
@@ -35,4 +36,5 @@ import GalleryBlock from '../components/template-blocks/GalleryBlock.vue'
 import FormBlock from '../components/template-blocks/FormBlock.vue'
 import FooterBlock from '../components/template-blocks/FooterBlock.vue'
 import SideBar from '../components/SideBar.vue'
+import Footer from '../components/Footer.vue'
 </script>

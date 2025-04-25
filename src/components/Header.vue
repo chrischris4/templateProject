@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-neutral-900 text-white p-6 shadow-md mt-4 mx-4 rounded-lg">
+  <header class="bg-neutral-900 text-white p-6 shadow-md top-4 rounded-lg fixed left-4 w-[calc(100%-32px)] z-50">
     <nav class="mx-4 flex justify-between items-center">
       <h1 class="text-xl font-bold">MonSite</h1>
       <ul class="flex gap-4 item-center">

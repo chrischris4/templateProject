@@ -1,9 +1,10 @@
 <script setup>
 import TemplateLinks from '../components/TemplateLinks.vue';
+import Footer from '../components/Footer.vue';
 </script>
 
 <template>
-    <div class="mt-4 w-10/12 mx-auto relative">
+    <div class="mt-32 w-10/12 mx-auto relative min-h-screen">
         <h2 class="mb-2">Mes templates</h2>
         <div class="flex gap-4">
             <div class="flex flex-col bg-white border border-dashed border-gray-200 rounded-xl p-4 md:p-5 w-1/3">
@@ -29,6 +30,7 @@ import TemplateLinks from '../components/TemplateLinks.vue';
             <TemplateLinks />
         </div>
     </div>
+    <Footer/>
 </template>
 
 

@@ -1,177 +1,93 @@
 <template>
-     <!-- Navigation Toggle -->
-     <div class="lg:hidden py-16 text-center">
+    <div
+      class="relative flex h-[calc(100vh-2rem)] w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
+      <div class="p-4 mb-2">
+        <h5 class="block font-sans text-xl antialiased font-bold leading-snug tracking-normal text-gray-900">
+          Sidebar
+        </h5>
+      </div>
+      <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+        <div class="relative block w-full">
+          <div role="button" @click="toggleCollapse"
+               class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none bg-blue-gray-50/50 text-start text-blue-gray-700 hover:bg-gray-200 hover:cursor-pointer focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
             <button type="button"
-                class="py-2 px-3 inline-flex justify-center items-center gap-x-2 text-start bg-gray-800 border border-gray-800 text-white text-sm font-medium rounded-lg shadow-2xs align-middle hover:bg-gray-950 focus:outline-hidden focus:bg-gray-900 dark:bg-white dark:text-neutral-800 dark:hover:bg-neutral-200 dark:focus:bg-neutral-200"
-                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-sidebar-header"
-                aria-label="Toggle navigation" data-hs-overlay="#hs-sidebar-header">
-                Open
+                    class=" cursor-pointer flex items-center justify-between w-full p-3 font-sans text-xl antialiased font-semibold leading-snug text-left transition-colors border-b-0 select-none border-b-blue-gray-100 text-blue-gray-900 hover:text-blue-gray-900">
+              <div class="grid mr-4 place-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                     aria-hidden="true" class="w-5 h-5">
+                  <path fill-rule="evenodd"
+                        d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.04 16.5l.5-1.5h6.42l.5 1.5H8.29zm7.46-12a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6zm-3 2.25a.75.75 0 00-1.5 0v3.75a.75.75 0 001.5 0V9zm-3 2.25a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0v-1.5z"
+                        clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <p class="block mr-auto font-sans text-base antialiased font-normal leading-relaxed text-blue-gray-900">
+                Theme
+              </p>
+              <span class="ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                     stroke="currentColor" aria-hidden="true"
+                     class="w-4 h-4 mx-auto transition-transform" :class="{'rotate-180': isOpen}">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                </svg>
+              </span>
             </button>
+          </div>
         </div>
-        <!-- End Navigation Toggle -->
-
-        <!-- Sidebar -->
-        <div id="hs-sidebar-header" class="hs-overlay pb-2 [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 w-64 hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform h-full hidden
- border border-gray-200 rounded-xl" role="dialog" tabindex="-1" aria-label="Sidebar">
-            <div class="relative flex flex-col h-full max-h-full ">
-                <!-- Header -->
-                <header class="p-4 flex justify-between items-center gap-x-2">
-                    <a class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80 "
-                        href="#" aria-label="Brand">Brand</a>
-
-                    <div class="lg:hidden -me-2">
-                        <!-- Close Button -->
-                        <button type="button"
-                            class="flex justify-center items-center gap-x-3 size-6 bg-white border border-gray-200 text-sm text-gray-600 hover:bg-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 "
-                            data-hs-overlay="#hs-sidebar-header">
-                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 6 6 18" />
-                                <path d="m6 6 12 12" />
-                            </svg>
-                            <span class="sr-only">Close</span>
-                        </button>
-                        <!-- End Close Button -->
-                    </div>
-                </header>
-                <!-- End Header -->
-
-                <!-- Header -->
-                <div class="mt-auto p-2 border-y border-gray-200">
-                    <!-- Account Dropdown -->
-                    <div class="hs-dropdown [--strategy:absolute] [--auto-close:inside] relative w-full inline-flex">
-                        <button id="hs-sidebar-header-example-with-dropdown" type="button"
-                            class="w-full inline-flex shrink-0 items-center gap-x-2 p-2 text-start text-sm text-gray-800 rounded-md hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                            aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                            <img class="shrink-0 size-5 rounded-full"
-                                src="https://images.unsplash.com/photo-1734122415415-88cb1d7d5dc0?q=80&w=320&h=320&auto=format&fit=facearea&facepad=3&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Avatar">
-                            Themes
-                            <svg class="shrink-0 size-3.5 ms-auto" xmlns="http://www.w3.org/2000/svg" width="24"
-                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m7 15 5 5 5-5" />
-                                <path d="m7 9 5-5 5 5" />
-                            </svg>
-                        </button>
-
-                        <!-- Account Dropdown -->
-                        <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 w-60 transition-[opacity,margin] duration opacity-0 hidden z-20 bg-white border border-gray-200 rounded-lg shadow-lg"
-                            role="menu" aria-orientation="vertical"
-                            aria-labelledby="hs-sidebar-header-example-with-dropdown">
-                            <div class="p-1">
-                                <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    Coffee
-                                </a>
-                                <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    Fancy
-                                </a>
-                                <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    Damn
-                                </a>
-                                <a class="flex items-center gap-x-3 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    Incroyable
-                                </a>
-                            </div>
-                        </div>
-                        <!-- End Account Dropdown -->
-                    </div>
-                    <!-- End Account Dropdown -->
-                </div>
-                <!-- End Header -->
-
-                <!-- Body -->
-                <nav
-                    class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 ">
-                    <div class="hs-accordion-group pb-0 px-2 pt-2 w-full flex flex-col flex-wrap"
-                        data-hs-accordion-always-open>
-                        <ul class="space-y-1">
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                    Header
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                    Hero
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                    Card
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                    Gallery
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                    Form
-                                </a>
-                            </li>
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100"
-                                    href="#">
-                                    <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                        <polyline points="9 22 9 12 15 12 15 22" />
-                                    </svg>
-                                    Footer
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- End Body -->
+  
+        <!-- Collapse Content -->
+        <transition name="fade" @before-enter="beforeEnter" @enter="enter" @leave="leave">
+          <div v-show="isOpen" class="transition-all duration-300">
+            <div role="button" class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-gray-200 hover:cursor-pointer focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+              <div class="grid mr-4 place-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+                     class="w-5 h-5">
+                  <path fill-rule="evenodd"
+                        d="M6.912 3a3 3 0 00-2.868 2.118l-2.411 7.838a3 3 0 00-.133.882V18a3 3 0 003 3h15a3 3 0 003-3v-4.162c0-.299-.045-.596-.133-.882l-2.412-7.838A3 3 0 0017.088 3H6.912zm13.823 9.75l-2.213-7.191A1.5 1.5 0 0017.088 4.5H6.912a1.5 1.5 0 00-1.434 1.059L3.265 12.75H6.11a3 3 0 012.684 1.658l.256.513a1.5 1.5 0 001.342.829h3.218a1.5 1.5 0 001.342-.83l.256-.512a3 3 0 012.684-1.658h2.844z"
+                        clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              Inbox
             </div>
-        </div>
-        <!-- End Sidebar -->
+          </div>
+        </transition>
+  
+      </nav>
+    </div>
   </template>
   
   <script setup>
+  import { ref } from 'vue';
+  
+  const isOpen = ref(false); // Etat pour gérer l'ouverture/fermeture du collapse
+  
+  const toggleCollapse = () => {
+    isOpen.value = !isOpen.value;
+  };
+  
+  const beforeEnter = (el) => {
+    el.style.maxHeight = 0;
+  };
+  
+  const enter = (el) => {
+    el.offsetHeight; // Forcer le recalcul du style
+    el.style.transition = 'max-height 0.3s ease-in-out';
+    el.style.maxHeight = el.scrollHeight + 'px'; // Définit la hauteur maximale pendant l'animation
+  };
+  
+  const leave = (el) => {
+    el.style.transition = 'max-height 0.3s ease-in-out';
+    el.style.maxHeight = 0; // Réduit la hauteur maximale pour faire disparaître l'élément
+  };
   </script>
+  
+  <style scoped>
+  /* Animation pour l'ouverture et la fermeture avec max-height */
+  .fade-enter-active, .fade-leave-active {
+    transition: max-height 0.3s ease-in-out;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active en version 2.1.8+ */ {
+    max-height: 0;
+    overflow: hidden;
+  }
+  </style>
   
