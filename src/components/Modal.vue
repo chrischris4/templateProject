@@ -41,7 +41,6 @@ import GalleryBlock from './template-blocks/GalleryBlock.vue'
 import FormBlock from './template-blocks/FormBlock.vue'
 import FooterBlock from './template-blocks/FooterBlock.vue'
 
-// Props
 const { isOpen } = defineProps({
     isOpen: {
         type: Boolean,
@@ -49,7 +48,6 @@ const { isOpen } = defineProps({
     }
 })
 
-// Emit event to close modal
 const emit = defineEmits(['update:isOpen'])
 
 const emitClose = () => {
