@@ -1,13 +1,19 @@
 <template>
     <!-- Image Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 w-full mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 w-full mx-auto relative">
+        <button @click="openModal"
+            class="flex items-center gap-2 text-white hover:text-gray-800 text-xl absolute -top-2 -right-2 bg-blue-500 rounded-full p-2 z-10">
+            <span class="material-symbols-rounded cursor-pointer">
+                edit
+            </span>
+        </button>
         <a class="group block relative overflow-hidden rounded-lg" href="#">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
                 src="https://images.unsplash.com/photo-1656618724305-a4257e46e847?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Project">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
                 <div
-                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
                     <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -20,12 +26,12 @@
         </a>
 
         <a class="group block relative overflow-hidden rounded-lg" href="#">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
                 src="https://images.unsplash.com/photo-1616427592793-67b858804534?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Project">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
                 <div
-                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
                     <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -38,12 +44,12 @@
         </a>
 
         <a class="group block relative overflow-hidden rounded-lg" href="#">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
                 src="https://images.unsplash.com/photo-1516131206008-dd041a9764fd?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Project">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
                 <div
-                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
                     <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -56,12 +62,12 @@
         </a>
 
         <a class="group block relative overflow-hidden rounded-lg" href="#">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
                 src="https://images.unsplash.com/photo-1707760696486-2a2cd7e0b6a6?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Project">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
                 <div
-                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
                     <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -74,12 +80,12 @@
         </a>
 
         <a class="group block relative overflow-hidden rounded-lg" href="#">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
                 src="https://images.unsplash.com/photo-1585159812596-fac104f2f069?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Project">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
                 <div
-                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
                     <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -92,12 +98,12 @@
         </a>
 
         <a class="group block relative overflow-hidden rounded-lg" href="#">
-            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg dark:bg-neutral-800"
+            <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
                 src="https://images.unsplash.com/photo-1654131300276-db70adf4f85d?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Project">
             <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
                 <div
-                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                    class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
                     <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -114,4 +120,6 @@
 </template>
 
 <script setup>
+import { inject } from 'vue';
+const openModal = inject('openModal');
 </script>

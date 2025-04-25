@@ -1,6 +1,12 @@
 <template>
     <div>
         <div class="w-full mx-auto py-24 space-y-8 mt-4 relative bg-neutral-600 rounded-xl text-gray-200">
+            <button @click="openModal"
+                class="flex items-center gap-2 text-white hover:text-gray-800 text-xl absolute -top-2 -right-2 bg-blue-500 rounded-full p-2">
+                <span class="material-symbols-rounded cursor-pointer">
+                    edit
+                </span>
+            </button>
             <!-- <img class="size-full absolute top-0 start-0 object-cover rounded-xl z-0"
                 src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
                 alt="Card Image"> -->
@@ -31,4 +37,6 @@
 </template>
 
 <script setup>
+import { inject } from 'vue';
+const openModal = inject('openModal');
 </script>

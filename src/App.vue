@@ -8,7 +8,6 @@ import Header from './components/Header.vue'
     <Header />
     <router-view></router-view>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>

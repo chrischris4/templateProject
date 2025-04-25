@@ -1,5 +1,11 @@
 <template>
-    <footer class="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+    <footer class="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto relative">
+        <button @click="openModal"
+            class="flex items-center gap-2 text-white hover:text-gray-800 text-xl absolute -top-2 -right-2 bg-blue-500 rounded-full p-2">
+            <span class="material-symbols-rounded cursor-pointer">
+                edit
+            </span>
+        </button>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10">
             <div class="col-span-full hidden lg:col-span-1 lg:block">
                 <a class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80" href="#"
@@ -135,4 +141,6 @@
 </template>
 
 <script setup>
+import { inject } from 'vue';
+const openModal = inject('openModal');
 </script>
