@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="w-full mx-auto py-24 space-y-8 mt-4 relative">
-            <img class="size-full absolute top-0 start-0 object-cover rounded-xl z-0"
+        <div class="w-full mx-auto py-24 space-y-8 mt-4 relative bg-neutral-600 rounded-xl text-gray-200">
+            <!-- <img class="size-full absolute top-0 start-0 object-cover rounded-xl z-0"
                 src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80"
-                alt="Card Image">
+                alt="Card Image"> -->
             <div class="max-w-3xl text-center mx-auto">
-                <h1 class="block font-medium text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl z-10 relative">
+                <h1 class="block font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl z-10 relative">
                     Now it's easier than ever to build products
                 </h1>
             </div>
