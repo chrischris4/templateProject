@@ -1,6 +1,6 @@
 <template>
     <div class="flex w-full pt-32">
-        <Modal :isOpen="isModalOpen" @update:isOpen="isModalOpen = $event" />
+        <Modal :isOpen="isModalOpen" :modalType="modalType" @update:isOpen="isModalOpen = $event" />
         <SideBar />
         <div class="flex w-[calc(83%-48px)] justify-end absolute right-4">
             <div class="bg-white p-6 rounded-xl w-full shadow-lg">
@@ -32,7 +32,6 @@
 <script setup>
 import HeaderBlock from '../components/template-blocks/HeaderBlock.vue'
 import HeroBlock from '../components/template-blocks/HeroBlock.vue'
-import CardBlock from '../components/template-blocks/CardBlock.vue'
 import GalleryBlock from '../components/template-blocks/GalleryBlock.vue'
 import FormBlock from '../components/template-blocks/FormBlock.vue'
 import FooterBlock from '../components/template-blocks/FooterBlock.vue'
@@ -42,17 +41,21 @@ import Modal from '../components/Modal.vue'
 import { ref, provide } from 'vue';
 import TextSection from '../components/template-blocks/TextSection.vue'
 import SectionBlock from '../components/template-blocks/SectionBlock.vue'
-const isModalOpen = ref(false);
 
-// Méthode pour ouvrir la modal
 const emitOpen = () => {
     isModalOpen.value = true;
 };
 
-const openModal = () => {
-    isModalOpen.value = true;
+const isModalOpen = ref(false);
+const modalType = ref('');
+const activeComponentState = ref(null); // <- pour stocker le composant actuel à modifier
+
+const openModal = (type, componentState) => {
+  modalType.value = type;
+  activeComponentState.value = componentState;
+  isModalOpen.value = true;
 };
 
-// 👇 On rend la fonction accessible aux enfants
 provide('openModal', openModal);
+provide('activeComponentState', activeComponentState);
 </script>

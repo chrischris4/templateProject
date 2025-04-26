@@ -1,5 +1,6 @@
 <template>
-  <header @click="openModal" class=" bg-white text-neutral-900 p-6 border-4 border-white/0 relative hover:border-blue-400 cursor-pointer">
+  <header :style="{ backgroundColor: headerStyle.backgroundColor }" @click="() => openModal('header', headerStyle)"
+    class=" text-neutral-900 p-6 border-4 border-white/0 relative hover:border-blue-400 cursor-pointer">
     <nav class="container mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">MonSite</h1>
       <ul class="flex gap-4">
@@ -12,6 +13,10 @@
 </template>
 
 <script setup>
-import { inject } from 'vue';
+import { inject, ref } from 'vue';
 const openModal = inject('openModal');
+
+const headerStyle = ref({
+  backgroundColor: '#ffffff' // couleur de base
+});
 </script>
