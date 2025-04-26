@@ -5,13 +5,38 @@
         leave-to-class="opacity-0 scale-95">
         <div v-if="isOpen"
             class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-screen bg-black/50 ">
-            <div class="bg-white p-6 rounded-xl shadow-lg w-2xs">
-                <h2 v-if="modalType === 'header'" class="font-bold text-xl">Modifier le Header</h2>
-                <div v-if="modalType === 'header'" class="flex gap-2 mt-4">
-                    <div @click="setColor('#3490dc')" class="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border border-black"></div>
-                    <div @click="setColor('#38c172')" class="w-8 h-8 bg-green-500 rounded-full cursor-pointer border border-black"></div>
-                    <div @click="setColor('#f66d9b')" class="w-8 h-8 bg-pink-500 rounded-full cursor-pointer border border-black"></div>
-                    <div @click="setColor('#ffffff')" class="w-8 h-8 bg-white rounded-full cursor-pointer border border-black"></div>
+            <div class="bg-white p-6 rounded-xl shadow-lg  w-xl">
+                <div v-if="modalType === 'header'" class="flex flex-col">
+                    <h2 class="font-bold text-xl mb-4">Modifier le Header</h2>
+                    <h3 class="">Type</h3>
+                    <div class="flex gap-2 mt-4">
+                        <div @click="setDisplayType('my-4 w-[calc(100%-32px)] mx-auto rounded-xl')"
+                            class="w-8 h-8 bg-gray-100 border border-gray-400 rounded-xs"></div>
+                            <div @click="setDisplayType('')"
+                            class="w-8 h-8 bg-gray-100 border border-gray-400 rounded-xs"></div>
+                    </div>
+                    <h3 class="">Text color</h3>
+                    <div class="flex gap-2 mt-4">
+                        <div @click="setTextColor('#3490dc')"
+                            class="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border border-black"></div>
+                        <div @click="setTextColor('#38c172')"
+                            class="w-8 h-8 bg-green-500 rounded-full cursor-pointer border border-black"></div>
+                        <div @click="setTextColor('#f66d9b')"
+                            class="w-8 h-8 bg-pink-500 rounded-full cursor-pointer border border-black"></div>
+                        <div @click="setTextColor('#ffffff')"
+                            class="w-8 h-8 bg-white rounded-full cursor-pointer border border-black"></div>
+                    </div>
+                    <h3 class="">Background color</h3>
+                    <div class="flex gap-2 mt-4">
+                        <div @click="setBackgroundColor('#3490dc')"
+                            class="w-8 h-8 bg-blue-500 rounded-full cursor-pointer border border-black"></div>
+                        <div @click="setBackgroundColor('#38c172')"
+                            class="w-8 h-8 bg-green-500 rounded-full cursor-pointer border border-black"></div>
+                        <div @click="setBackgroundColor('#f66d9b')"
+                            class="w-8 h-8 bg-pink-500 rounded-full cursor-pointer border border-black"></div>
+                        <div @click="setBackgroundColor('#ffffff')"
+                            class="w-8 h-8 bg-white rounded-full cursor-pointer border border-black"></div>
+                    </div>
                 </div>
                 <h2 v-else-if="modalType === 'footer'">Modifier le Footer</h2>
                 <h2 v-else>Renommer votre template</h2>
@@ -49,9 +74,19 @@ const emitClose = () => {
     emit('update:isOpen', false)
 }
 
-const setColor = (color) => {
+const setBackgroundColor = (backgroundColor) => {
     if (activeComponentState?.value) {
-        activeComponentState.value.backgroundColor = color;
+        activeComponentState.value.backgroundColor = backgroundColor;
+    }
+}
+const setTextColor = (textColor) => {
+    if (activeComponentState?.value) {
+        activeComponentState.value.textColor = textColor;
+    }
+}
+const setDisplayType = (displayType) => {
+    if (activeComponentState?.value) {
+        activeComponentState.value.displayType = displayType;
     }
 }
 </script>
