@@ -1,5 +1,5 @@
 <script setup>
-import TemplateLinks from '../components/TemplateLinks.vue';
+import TemplateCard from '../components/TemplateCard.vue';
 import Footer from '../components/Footer.vue';
 </script>
 
@@ -7,7 +7,7 @@ import Footer from '../components/Footer.vue';
     <div class="mt-32 w-10/12 mx-auto relative min-h-screen">
         <h2 class="mb-2">Mes templates</h2>
         <div class="flex gap-4">
-            <div class="flex flex-col bg-white border border-dashed border-gray-200 rounded-xl p-4 md:p-5 w-1/3">
+            <div class="flex flex-col bg-white border border-dashed border-gray-200 rounded-xl p-4 md:p-5 w-1/3 hover:border-blue-500 cursor-pointer">
                 <h3 class="text-lg font-bold text-gray-800">
                     Créer un template
                 </h3>
@@ -27,7 +27,7 @@ import Footer from '../components/Footer.vue';
                     </svg>
                 </a>
             </div>
-            <TemplateLinks />
+            <TemplateCard />
         </div>
     </div>
     <Footer/>

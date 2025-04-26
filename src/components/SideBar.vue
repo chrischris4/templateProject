@@ -1,12 +1,12 @@
 <template>
     <div
-        class="fixed top-32 left-4 flex h-[calc(100vh-2rem)] w-1/5 flex-col rounded-xl bg-neutral-900 bg-clip-border p-4 text-gray-200 shadow-xl shadow-blue-gray-900/5">
+        class="fixed top-32 left-4 flex h-[calc(100vh-2rem)] w-1/6 flex-col rounded-xl bg-neutral-900 bg-clip-border p-4 text-gray-200 shadow-xl shadow-blue-gray-900/5">
         <div class="p-4 mb-2">
             <h5 class="block font-sans text-xl antialiased font-bold leading-snug tracking-normal text-gray-200">
                 Sidebar
             </h5>
         </div>
-        <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+        <nav class="flex flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
             <div class="relative block w-full">
                 <div role="button" @click="toggleCollapse"
                     class="flex items-center w-full p-0 leading-tight transition-all rounded-lg outline-none bg-blue-gray-50/50 text-start text-blue-gray-700 hover:bg-neutral-700 hover:cursor-pointer focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">

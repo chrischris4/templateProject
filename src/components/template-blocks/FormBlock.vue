@@ -1,14 +1,8 @@
 <template>
   <!-- Card Section -->
-  <div class="max-w-2xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="w-full py-4 lg:py-8 border-4 border-white/0 hover:border-blue-500 cursor-pointer">
     <!-- Card -->
-    <div class="bg-white rounded-xl shadow-xs p-4 sm:p-7 relative">
-      <button @click="openModal"
-        class="flex items-center gap-2 text-white hover:text-gray-800 text-xl absolute -top-2 -right-2 bg-blue-500 rounded-full p-2">
-        <span class="material-symbols-rounded cursor-pointer">
-          edit
-        </span>
-      </button>
+    <div class="bg-white shadow-xs p-4 sm:p-7 relative w-2/5 mx-auto">
       <div class="text-center mb-8">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
           Contact

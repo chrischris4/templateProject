@@ -1,11 +1,5 @@
 <template>
-  <header class=" bg-neutral-900 text-white p-6 shadow-md mt-4 rounded-lg relative">
-    <button @click="openModal"
-      class="flex items-center gap-2 text-white hover:text-gray-800 text-xl absolute -top-2 -right-2 bg-blue-500 rounded-full p-2">
-      <span class="material-symbols-rounded cursor-pointer">
-        edit
-      </span>
-    </button>
+  <header @click="openModal" class=" bg-white text-neutral-900 p-6 border-4 border-white/0 relative hover:border-blue-400 cursor-pointer">
     <nav class="container mx-auto flex justify-between items-center">
       <h1 class="text-xl font-bold">MonSite</h1>
       <ul class="flex gap-4">
